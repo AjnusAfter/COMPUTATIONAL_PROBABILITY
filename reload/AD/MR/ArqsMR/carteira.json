@@ -1,0 +1,14 @@
+﻿
+{
+	"investidor":
+		[
+			"Paulo Silva", "Cris Pinheiro", "Thomas Filho"
+		],
+	"acao":
+		[
+			{ "sigla":"PTR04", "quantidade": 77 },
+			{ "sigla":"IBU05", "quantidade": 25 }
+		],
+	"carteira":"GOLD"
+}
+

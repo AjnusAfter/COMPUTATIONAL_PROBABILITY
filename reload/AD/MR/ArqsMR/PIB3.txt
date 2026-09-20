@@ -1,0 +1,27 @@
+ACAcre                 732793   8477
+ALAlagoas             3120922  24575
+APAmapá                668689   8266
+AMAmazonas            3480937  59779
+BABahia              14021432 154340
+CECeara               8448055  77865
+DFDistrito Federal    2562963 149906
+ESEspírito Santo      3512672  82122
+GOGoiás               6004045  97576
+MAMaranhão            6569683  45256
+MTMato Grosso         3033991  59600
+MSMato Grosso do Sul  2449341  43514
+MGMinas Gerais       19595309 351381
+PAPará                7588078  77848
+PBParaíba             3766834  31947
+PRParaná             10439601 217290
+PEPernambuco          8796032  95187
+PIPiauí               3119015  22060
+RJRio de Janeiro     15993583 407123
+RNRio Grande do Norte 3168133  32339
+RSRio Grande do Sul  10695532 252483
+RORondônia            1560501  23561
+RRRoraima              451227   6341
+SCSanta Catarina      6249682 152482
+SPSão Paulo          412521601247596
+SESergipe             2068031  23932
+TOTocantins           1383453  17240
