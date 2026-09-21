@@ -191,24 +191,71 @@ frutas = lista = ['uva', 'abacaxi', 'banana', 'figo', 'damasco', 'amora']
 print(selecionaPalavra(frutas))
 
 #23
+def selecionaFrase(frases, palavra, valor):    
+    return (list(filter(lambda frase: frase.lower().count(palavra) >= valor, frases)))
+
+frases = [
+    'Sou noob demais para enfrentar um Boss de Raide.',
+    'O Guerreiro e o Mago estavam prontos para a missão.',
+    'O jogador encontrou uma Espada rara, mas trocou a Espada Lendária por Ouro.',
+    'Nenhum Item está quebrado, só a Espada das Espadas.',
+]
+
+palavra = 'espada' #funciona com EspadaS
+quantidade = 2
+
+print(selecionaFrase(frases, palavra, quantidade))
 
 
 #24
-
+carteira = [
+    {'codigo': 'ELET5', 'investimento': 3000, 'retorno': 3500},
+    {'codigo': 'USIM4', 'investimento': 500, 'retorno': 300},
+    {'codigo': 'VALE8', 'investimento': 100, 'retorno': 130},
+    {'codigo': 'BVCA9', 'investimento': 1000, 'retorno': 1050}    
+    ]
 
 #24a
+def selecionaCodigo(carteira):
+    return (list(map(lambda x: x['codigo'], carteira)))
 
+print(selecionaCodigo(carteira))
 
 #24b
-
+def calculaTaxa(carteira):
+    return (list(map(lambda x: round((x['retorno'] - x['investimento']) / x['investimento'], 2), carteira)))
+    
+print(calculaTaxa(carteira))
 
 #24c
+def selecionaAcaoInvestimento(carteira, investimento):
+    return (list(filter(lambda x: x['investimento'] > investimento, carteira)))
 
+investimento = 700
+    
+print(selecionaAcaoInvestimento(carteira, investimento))
 
 #24d
+def selecionaAcaoTaxa(carteira, valor):
+    return (list(filter(lambda x: (x['retorno'] - x['investimento']) / x['investimento'] > valor, carteira)))
 
+taxa = 0.1
+
+print(selecionaAcaoTaxa(carteira, taxa))
 
 #24e
+def calculaRetorno(carteira):
+    investimento = list(map(lambda x: x['investimento'], carteira))
+    return (reduce(lambda acc, x: acc + x, investimento))
 
+print(calculaRetorno(carteira))
 
 #24f
+resumo=[
+    f"{acao['codigo']}: {'+' if taxa >= 0 else ''}{round(taxa * 100, 1)}%"
+    for acao in carteira
+    for taxa in [(acao['retorno'] - acao['investimento']) / acao['investimento']]
+    ]
+
+print(resumo)
+
