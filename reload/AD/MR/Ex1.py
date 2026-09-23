@@ -27,7 +27,7 @@ for i in range(nSamples):
     faceMoeda = random.choices(["CA","CO"], weights = [1/2,1/2], k=1)[0]
     faceDado = random.choices(["1","2","3","4","5","6"], weights = [1/6,1/6,1/6,1/6,1/6,1/6], k=1)[0]
     
-    if ((faceMoeda == "CA") & (faceDado == "4")):
+    if ((faceMoeda == "CA") and (faceDado == "4")):
         contB = contB + 1
 
 PB = contB / nSamples
@@ -47,7 +47,7 @@ for i in range(nSamples):
     faceMoeda = random.choices(["CA","CO"], weights = [2/3,1/3], k=1)[0]
     faceDado = random.choices(["1","2","3","4","5","6"], weights = [1/6,1/6,1/6,1/6,1/6,1/6], k=1)[0]
     
-    if ((faceMoeda == "CA") & (faceDado == "4")):
+    if ((faceMoeda == "CA") and (faceDado == "4")):
         contC = contC + 1
     
 PC = contC / nSamples
