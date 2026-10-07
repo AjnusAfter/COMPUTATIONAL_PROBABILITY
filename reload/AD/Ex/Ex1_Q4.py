@@ -16,88 +16,97 @@ random.seed(123)
 companhia_voosDiarios          = 20
 areonave_capacidadePassageiros = 180
 passagensVendidas              = 190
-passageiro_ProbEmbarque_low    = 0.90 
-passageiro_ProbEmbarque_high   = 0.95
-perfis                         = ["executivo", "lazer", "conexão", "etc"]
+taxaVoluntarios                = 0.25
+compVoluntaria                 = 1000
+compForcada                    = 2500
 nDias                          = 100
+probComparecer_low             = 0.90 
+probComparecer_high            = 0.95
+#perfis                        = ["executivo", "lazer", "conexão", "etc"]
 
-nVoos           = nDias * companhia_voosDiarios
-taxaVoluntarios = 0.25
-compVoluntaria  = 1000
-compForcada     = 2500
+nVoos                          = nDias * companhia_voosDiarios
 
 
 # Pré-alocação dos vetores
-presentesTotal            = [0]     * nVoos
-countRealocadosEmbarcados = [0]     * nVoos
-novosEmbarcados           = [0]     * nVoos
-excedentes                = [0]     * nVoos
-voluntarios               = [0]     * nVoos
-forcados                  = [0]     * nVoos
-custos                    = [0]     * nVoos
-overbooking               = [False] * nVoos
+presentesTotal                 = [0]     * nVoos
+countRealocadosEmbarcados      = [0]     * nVoos
+novosEmbarcados                = [0]     * nVoos
+excedentes                     = [0]     * nVoos
+voluntarios                    = [0]     * nVoos
+forcados                       = [0]     * nVoos
+custos                         = [0]     * nVoos
+overbooking                    = [False] * nVoos
 
 # fila de espera inicial
 filaDeEspera = 0
 
-
+# pra cada vôo nos nDias
 for voo in range(nVoos):
-    #Sorteio de presença
+    # Sorteio de presença:
     
     probs = []
+    # pra cada passagem vendida
     for _ in range(passagensVendidas):
-        probComparecer = random.uniform(0.90, 0.95)
+        # calcula a probabilidade do passageiro aparecer
+        probComparecer = random.uniform(probComparecer_low, probComparecer_high)
+        # registra a probabilidade do passageiro aparecer
         probs.append(probComparecer)
     
     presentesNovos = 0
-    
+    # pra cada probabilidade do passageiro aparecer
     for prob in probs:
+        # sorteia um valor
         sorteio = random.random()
         
+        # se valor está dentro da probabilidade (i.e probabilidade aconteceu)
         if sorteio < prob:
+            # contabiliza que passageiro (novo) compareceu
             presentesNovos+=1
     
+    # totalPresentes    = filaDeEspera + presentesNovos
     totalPresentes      = filaDeEspera + presentesNovos
+    # registra total de Presentes no vôo
     presentesTotal[voo] = totalPresentes
     
     # se sobrar passageiro
     if totalPresentes > areonave_capacidadePassageiros:
-        # disponíveis                   = capacidade
+        # assentos disponíveis          = capacidade
         aeronave_assentosDisponiveis    = areonave_capacidadePassageiros
         
         # traz e embarca fila de espera
         countRealocadosEmbarcados[voo]  = filaDeEspera
+        # calcula assentos restantes
         aeronave_assentosRestantes      = aeronave_assentosDisponiveis - countRealocadosEmbarcados[voo]
         
-        # calcula quantos sobram
+        # calcula quantos embarcam
         novosEmbarcados[voo]            = min(presentesNovos, aeronave_assentosRestantes)
+        # calcula quantos sobram
         excedentes[voo]                 = presentesNovos - novosEmbarcados[voo]
         
-        # excedentes: quantos saem voluntário, ou à força 💀
+        # excedentes: calcula quantos saem voluntários, ou à força 💀
         voluntarios[voo] = math.floor(excedentes[voo] * taxaVoluntarios)
-        forcados[voo] = excedentes[voo] - voluntarios[voo]
+        forcados[voo]    = excedentes[voo] - voluntarios[voo]
         
         # calcula custos para remanejar passageiros neste vôo
         custos[voo] = voluntarios[voo] * compVoluntaria + forcados[voo] * compForcada
         
-        # fila de Espera final
+        # contabiliza fila de Espera final
         filaDeEspera = voluntarios[voo] + forcados[voo]
         
-        # teve overbooking
+        # registra que teve overbooking
         overbooking[voo] = True
         
     # se não sobrar passageiro
     else:
-        countRealocadosEmbarcados[voo] = filaDeEspera
-        novosEmbarcados[voo] = novosEmbarcados
-        excedentes[voo] = 0
-        voluntarios[voo] = 0
-        forcados[voo] = 0
-        custos[voo]
-        fila = 0
-        overbooking[voo] = False
+        countRealocadosEmbarcados[voo] = filaDeEspera           # registra que ninguém realocado (fila de espera vazia)
+        novosEmbarcados[voo]           = novosEmbarcados        # registra passageiros que apareceram/embarcaram
+        excedentes[voo]                = 0                      # registra nenhum excedente
+        voluntarios[voo]               = 0                      # registra nenhum realocado voluntário
+        forcados[voo]                  = 0                      # registra nenhum realocado forçado
+        custos[voo]                    = 0                      # registra nenhum custo adicional no vôo
+        filaDeEspera                   = 0                      # registra ninguém na fila de espera
+        overbooking[voo]               = False                  # registra que não ouve overbooking
         
-
 
 # Estatísticas
 print("Resultados da Simulação:")        
@@ -112,15 +121,11 @@ print(f"Média de passageiros por vôo: {math.floor(sum(presentesTotal) / len(pr
 print(f"Total de excedentes: {sum(excedentes)}")
 
 
-        
-        
-        
-        
-    
-    
+
 
 
 """
+--------------------------------------------------------------------------------------------------------------------------------------------------
 embarcados = 0
 if embarcados > areonave_capacidadePassageiros:
     filaDeEspera=[]

@@ -1,0 +1,70 @@
+OVERBOOKING:
+
+Parâmetros:   10 (enunciado)
+Vetores:      8
+filaDeEspera: 1
+
+
+Algoritmo:
+
+PRÉ:
+# Parâmetros
+# Pré-alocação dos vetores
+# fila de espera inicial (vazia)
+
+BLOCO:
+# pra cada vôo nos nDias
+	# Sorteio de presença:
+
+	# pra cada passagem vendida
+		# calcula a probabilidade do passageiro aparecer
+		# registra a probabilidade do passageiro aparecer
+
+	# pra cada probabilidade do passageiro aparecer
+		# sorteia um valor
+
+		# se valor está dentro da probabilidade (i.e probabilidade aconteceu)
+		# contabiliza que passageiro (novo) compareceu
+
+	# totalPresentes = filaDeEspera + presentesNovos
+	# registra total de Presentes no vôo
+
+	# se sobrar passageiro
+		# assentos disponíveis = capacidade
+
+		# traz e embarca fila de espera
+		# calcula assentos restantes
+
+		# calcula quantos embarcam
+		# calcula quantos sobram
+
+		# excedentes: calcula quantos saem voluntários, ou à força 💀
+
+		# calcula custos para remanejar passageiros neste vôo
+
+		# contabiliza fila de Espera final
+
+		# registra que teve overbooking
+
+	# se não sobrar passageiro
+		# registra que ninguém realocado (fila de espera vazia)
+		# registra passageiros que apareceram/embarcaram
+		# registra nenhum excedente
+		# registra nenhum realocado voluntário
+		# registra nenhum realocado forçado
+		# registra nenhum custo adicional no vôo
+		# registra ninguém na fila de espera
+		# registra que não ouve overbooking
+
+
+PÓS:
+# Imprime estatísticas:
+# a taxa média de overbooking; 
+# o custo total 
+# e o custo médio diário das compensações; 
+# quantos passageiros foram realocados voluntariamente 
+# e quantos foram forçados.
+
+# BÔNUS:
+# Média de passageiros por vôo
+# Total de excedentes
