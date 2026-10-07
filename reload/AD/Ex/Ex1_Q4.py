@@ -108,6 +108,8 @@ print(f"Quantos passageiros foram realocados voluntariamente: {sum(voluntarios)}
 print(f"Quantos passageiros foram realocados opressivamente: {sum(forcados)}")
 
 print("\nBÔNUS:")
+print(f"Média de passageiros por vôo: {math.floor(sum(presentesTotal) / len(presentesTotal))}")
+print(f"Total de excedentes: {sum(excedentes)}")
 
 
         
