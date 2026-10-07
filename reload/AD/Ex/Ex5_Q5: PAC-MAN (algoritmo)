@@ -1,0 +1,53 @@
+PAC-MAN (algoritmo):
+
+PRÉ:
+Parâmetros: 10 (9 enunciado + 1 vitorias = 0)
+Funções:
+		# para movimento aleatório dentro do labirinto
+		def mover(posicao, dimensao):
+			# direções possíveis: cima, baixo, esquerda, direita
+
+			# posição recebida/inicial
+
+			# loop
+				# sorteia direção
+				# DE-PARA posição inicial -> direção sorteada
+
+				# se não sair do mapa
+				# retorna posição para onde se moveu
+
+		# gera posições únicas de pastilhas (exceto [1,1])
+		def gerarPastilhas(nPastilhas, dimensao):
+			# inicializa set de posições
+
+			# enquanto menos posições criadas que número de pastilhas
+				# gera posição (x,y) aleatória
+
+				# se for posição válida para pastilha
+					# atribui posição à pastilha
+
+			# retorna lista de posições das pastilhas
+
+BLOCO:
+# para cada jogo/partida/simulação
+	# seta posições iniciais na fase
+
+	# inicializa set de pastilhas coletadas
+
+	# loop do jogo (tem break, calma :v)
+		# movimenta o Pac-Man
+
+		# se está na mesma posição/coletou alguma pastilha
+			# adiciona ao set de pastilhas coletadas
+			# remove do set de pastilhas no mapa
+
+		# se coletou todas as pastilhas (vem 1o no código: prioridade)
+			# WIN
+
+		# movimenta os fantasmas
+
+		# se ghost está na mesma posição/come Pac-Man
+			# LOSE
+
+PÓS:
+#calcula e imprime probabilidade de Vitória
