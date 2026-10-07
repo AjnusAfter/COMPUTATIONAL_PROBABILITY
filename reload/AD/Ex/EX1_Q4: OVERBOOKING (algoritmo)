@@ -1,6 +1,6 @@
 OVERBOOKING:
 
-Parâmetros:   10 (enunciado)
+Parâmetros:   11 (10 enunciado +  1 cruzando do enunciado)	# nVoos = nDias * nVoosDiarios
 Vetores:      8
 filaDeEspera: 1
 

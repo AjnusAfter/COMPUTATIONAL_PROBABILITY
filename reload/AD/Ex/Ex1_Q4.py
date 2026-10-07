@@ -24,6 +24,7 @@ probComparecer_low             = 0.90
 probComparecer_high            = 0.95
 #perfis                        = ["executivo", "lazer", "conexão", "etc"]
 
+# nVoos                        = nDias * companhia_voosDiarios
 nVoos                          = nDias * companhia_voosDiarios
 
 
