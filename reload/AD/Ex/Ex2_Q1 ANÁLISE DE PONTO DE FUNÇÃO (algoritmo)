@@ -1,0 +1,28 @@
+ANÁLISE DE PONTO DE FUNÇÃO
+
+BIBLIOTECAS:
+random
+numpy
+matplotlib.pyplot
+
+"Globais": 6 (3 enunciado , 3 vetores de Total)
+
+
+BLOCO:
+for
+	"Locais": 4 + 10 + 2(+1) + 2 + 2(+1) ( enunciado(+ auxiliares) )
+	3 appends nos vetores Total
+
+PÓS:
+print usando o np.mean
+
+plot usando o: 
+	plt.figure()
+
+	plt.subplot()
+	plt.hist()
+	plt.title()
+
+	plt.light_layout()
+	plt.show()
+
