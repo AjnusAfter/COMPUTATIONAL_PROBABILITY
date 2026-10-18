@@ -1,0 +1,62 @@
+#1 seed
+
+
+#2 samples
+
+
+#3 parâmetros do enunciado: 5 - 1(definição sorteada no loop) = 4
+
+#4 parâmetros da enunciado (letra): 1
+
+
+#5 pré-parâmetros para o loop (respostas da questão): 3
+
+
+#6 para cada dia
+
+    # 6.1 define pessoas infectadas
+
+    
+    # 6.2 se houverem infectadas, dia pandêmico 
+
+        
+    # para cada pessoa
+
+        
+    # 6.3 para cada suscetível
+
+        # 6.3.1 sorteia quantidade de contatos com pessoas no dia
+
+        
+        # 6.3.1 calcula probabilidade do contato ser com uma pessoa infectada
+
+        
+        # 6.3.2 para cada contato 
+
+            
+            # 6.3.3 sorteia se contato com pessoa infectada, e se infecta
+
+                    # 6.3.4 se sim, Suscetível vira Exposto     
+
+                    # 6.3.5 incrementa contador de contrairamDoença
+
+                    
+    # 6.4 para cada exposto                
+        
+        # 6.4.1 sorteia se doença progride
+            
+            # 6.3.4 se sim, Exposto vira Infectado     
+
+    # 6.5 para cada infectado                         
+
+        # 6.5.1 sorteia se doença morre
+
+            # 6.3.4 se sim, Infectado vira Recuperado (imune)     
+
+    
+    #7 atualiza total de infectadas
+
+    #8 atualiza máximo total de infectadas
+
+#9 imprime respostas (pré-parâmetros do loop): 3
+     
