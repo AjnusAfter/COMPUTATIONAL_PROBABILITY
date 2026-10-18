@@ -1,0 +1,23 @@
+#1 definir seed: 123
+
+#2 definir parâmetros: nSamples, areaTalhao, ladoTalhao
+
+#3 definir categorias: "Ruim": 0, "Média": 0,"Boa": 0,"Excelente": 0
+
+#4 definir calculo da área (opcional, via função)
+
+#5 para cada simulação
+    #5.1 sorteia coordenadas
+    
+    #5.2 calcula a área
+    
+    #5.3 calcula a proporção
+    
+    #5.4 avalia categoria da proporção
+    
+
+#6 para cada 'categoria: quantidade' no dicionário
+    #6.1 imprime 'Categoria: Quantidade (percentual)'
+
+
+
