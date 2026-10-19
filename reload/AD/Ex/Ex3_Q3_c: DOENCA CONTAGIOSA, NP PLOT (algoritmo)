@@ -1,0 +1,63 @@
+#0 importar bibliotecas
+
+#1 seed
+
+#2 pessoas e cenários (samples)
+
+#3 parâmetros do enunciado: 5 - 2(definição setada no loop) = 3
+
+#4 parâmetros da enunciado (letra c): 1
+
+#5 armazenamento de histórico/pré-parâmetros para cálculo das médias e plot(respostas da questão): 3
+
+#6 algoritmo demora pra rodar, feedback para o usuário
+
+#7 para cada cenário
+
+    #8 pré-parâmetros para o loop (dicionário + respostas da questão): 4
+    
+    #9 para cada dia
+
+        #10 define pessoas infectadas
+        
+        #11 se houverem infectadas, dia pandêmico 
+            
+        #12 para cada suscetível
+
+            #13 sorteia quantidade de contatos com pessoas no dia
+            
+            #14 calcula probabilidade do contato ser com uma pessoa infectada
+            
+            #15 para cada contato 
+                
+                #16 sorteia se contato com pessoa infectada (podia sortear com as outras também) e se infecta 
+                
+                        #17 se sim, Suscetível vira Exposto     
+                
+                        #18 incrementa contador de contrairamDoença, e breca
+                        
+        #19 para cada exposto                
+            
+            #20 sorteia se doença progride
+                
+                #21 se sim, Exposto vira Infectado     
+    
+        #22 para cada infectado                         
+            
+            #23 sorteia se doença morre
+                
+                #24 se sim, Infectado vira Recuperado (imune)     
+        
+        #25 atualiza total de infectadas
+        
+        #26 atualiza máximo total de infectadas
+        
+    #27 armazena histórico dos itens que o enunciado pede: 3    
+        
+    #28 incrementa e imprime cenário completo
+
+#29 calcula médias dos itens que o enunciado pede: 3    
+
+#30 imprime respostas dos itens que o enunciado pede: 3    
+
+#31 plota histograma de Número de Pessoas Infectadas (5 comandos)
