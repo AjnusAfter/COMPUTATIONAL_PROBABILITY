@@ -59,6 +59,7 @@ for _ in range(nDias):
                     SEIR["Exposto"]     +=1
                     # 6.3.5 incrementa contador de contrairamDoença
                     contrairamDoenca    +=1
+                    break;
                     
     # 6.4 para cada exposto                
     for _ in range(SEIR["Exposto"])   :

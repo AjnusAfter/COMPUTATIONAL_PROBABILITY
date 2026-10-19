@@ -1,0 +1,68 @@
+#1 seed
+
+
+#2 samples
+
+
+#3 parâmetros do enunciado: 5 - 1(definição sorteada no loop) = 4
+
+
+#4 parâmetros da enunciado (letra a): 1
+
+
+#5 armazenamento de histórico/pré-parâmetros para o loop (respostas da questão): 4
+
+
+#6 para cada dia
+
+        
+    # 6.1 para cada suscetível
+    
+        # 6.1.1 sorteia quantidade de contatos com pessoas no dia
+        
+        
+        # 6.1.2 calcula probabilidade do contato ser com uma pessoa infectada
+        
+        
+        # 6.1.3 para cada contato 
+        
+            
+            # 6.1.3.1 sorteia se contato com pessoa infectada, e se infecta
+            
+                    
+    # 6.2 para cada exposto                
+    
+        
+        # 6.2.1 sorteia se doença progride
+        
+            
+            # 6.2.1.1 se sim, Exposto vira Infectado     
+            
+
+    # 6.3 para cada infectado                         
+    
+        
+        # 6.3.1 sorteia se doença morre
+        
+            
+            # 6.3.1.1 se sim, Infectado vira Recuperado (imune)     
+            
+            
+    
+    # 6.4 armazena histórico
+    
+
+#7 parametriza plot das respostas (pré-parâmetros do loop): 4
+
+
+
+#8 ativa legendas
+
+
+#9 ativa título e nome dos eixos
+
+
+#10 ativa grid
+
+
+#11 plota
