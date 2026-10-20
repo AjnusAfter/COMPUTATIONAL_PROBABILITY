@@ -1,0 +1,17 @@
+#0 importa numpy
+
+#1 define LCG
+
+#2 define parâmetros do LCG: 4
+
+#3 define quantidade de leituras
+
+#4 declara vetores para calcular média(s) desejadas: 3
+
+#5 gera LCG's (com sementes diferentes)
+
+#6 preenche os vetores (a*x + c?) iterando
+
+#7 calcula as médias a partir dos vetores
+
+#8 imprime as médias
