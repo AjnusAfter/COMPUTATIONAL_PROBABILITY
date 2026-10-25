@@ -3,7 +3,7 @@
 """
 Created on Thu Oct 22 21:06:18 2026
 
-@author: jn
+@author: ajna
 """
 
 # a) ( V ) Sejam 𝐴 e 𝐵 dois conjuntos, então, A U B = 𝐴̅ ∩ 𝐵̅.
