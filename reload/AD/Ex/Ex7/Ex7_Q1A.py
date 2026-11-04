@@ -31,18 +31,19 @@ pSinistro_C4 = pB * pSerAcima30_B * pSinistroAcima30_B
 
 pSinistro = pSinistro_C1 + pSinistro_C2 + pSinistro_C3 + pSinistro_C4
 
-#A.1
+# B
 pSinistroDadoB = pSerAte30_B * pSinistroAte30_B + pSerAcima30_B * pSinistroAcima30_B
 pBDadoSinistro = Bayes(pSinistroDadoB, pB, pSinistro)
 print("P(B | Sinistro):", pBDadoSinistro)
 
-#A.2
 pAte30Anos = pA * pSerAte30_A + pB * pSerAte30_B
 pSinistroAte30 = pSinistro_C1 + pSinistro_C3 
 pSinistroDadoAte30 = pSinistroAte30 / pAte30Anos
 pAte30DadoSinistro = Bayes(pSinistroDadoAte30, pAte30Anos, pSinistro)
 print("P(Até 30 anos | Sinistro):", pAte30DadoSinistro)
 
-#A.3
-pSinistroAte30_B = pSinistro_C3
-print("P(B | Sinistro e até 30 anos):", Bayes(pSinistro_B, pB, pSinistro_Ate30))
+pSinistroAte30 = pSinistro_C1 + pSinistro_C3
+pSinistroAte30DadoB = pSerAte30_B * pSinistroAte30_B
+pBDadoSinistroAte30 = Bayes(pSinistroAte30DadoB, pB,pSinistroAte30)
+
+print("P(B | Sinistro e até 30 anos):", pBDadoSinistroAte30)
