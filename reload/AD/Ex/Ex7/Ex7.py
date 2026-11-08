@@ -91,7 +91,7 @@ p1 = sum(
     for i in range(nSamples)
     ) / nSinistros
 
-print(f"P(B | Sinistro): {p1} ({p1*100:.2f}%)")
+print(f"    : {p1} ({p1*100:.2f}%)")
 
 # A.2: P(Até 30 anos | Sinistro)
 p2 = sum(
@@ -109,9 +109,9 @@ p3 = sum(
 
 print(f"P(B | Sinistro e Até 30 anos): {p3} ({p3*100:.2f}%)")
 
+# B
 print("Analítico:") 
 
-# B
 pSinistroDadoB = pSerAte30_B * pSinistroAte30_B + pSerAcima30_B * pSinistroAcima30_B
 pBDadoSinistro = Bayes(pSinistroDadoB, pB, pSinistro)
 print(f"P(B | Sinistro): {pBDadoSinistro} ({pBDadoSinistro*100:.2f}%)")
@@ -126,3 +126,93 @@ pSinistroAte30 = pSinistro_C1 + pSinistro_C3
 pSinistroAte30DadoB = pSerAte30_B * pSinistroAte30_B
 pBDadoSinistroAte30 = Bayes(pSinistroAte30DadoB, pB,pSinistroAte30)
 print(f"P(B | Sinistro e até 30 anos): {pBDadoSinistroAte30} ({pBDadoSinistroAte30*100:.2f}%)")
+
+
+# C - comparação entre a carteira original e a alterada
+
+def simularCarteiraAte30(pJovens_A, pJovens_B):
+    nSinistros = 0
+    nSinistrosB = 0
+    nSinistrosAte30 = 0
+    nSinistrosAte30_B = 0
+    
+    for _ in range(nSamples):
+        
+        # sorteia o plano
+        if random.uniform(0, 1) <= pA:
+            planoCliente = "A"
+        else:
+            planoCliente = "B"
+        
+        # sorteia a faixa etária conforme o plano
+        u = random.uniform(0, 1)
+        
+        if planoCliente == "A":
+            ehJovem = u <= pJovens_A
+        else:
+            ehJovem = u <= pJovens_B
+            
+        # define a probabilidade de sinistro
+        if planoCliente == "A":
+            if ehJovem:
+                pSinistro = pSinistroAte30_A
+            else:
+                pSinistro = pSinistroAcima30_A
+        else:
+            if ehJovem:
+                pSinistro = pSinistroAte30_A
+            else:
+                pSinistro = pSinistroAcima30_A
+        
+        # sorteia o sinistro
+        teveSinistro = random.uniform(0, 1) < pSinistro
+        
+        # conta os eventos
+        if teveSinistro:          
+            nSinistros +=1
+            
+            if planoCliente == "B":
+                nSinistrosB+=1
+                
+            if ehJovem:
+                nSinistrosAte30+=1
+                
+                if planoCliente == "B":
+                    nSinistrosAte30_B+=1
+    
+    return (
+        nSinistros / nSamples,
+        nSinistrosB / nSinistros,
+        nSinistrosAte30 / nSinistros,
+        nSinistrosAte30_B / nSinistrosAte30
+        )
+
+# carteira original
+random.seed(42)
+original = simularCarteiraAte30(pSerAte30_A, pSerAte30_B)
+
+# carteira alterada (20%+ jovens)
+alterada = simularCarteiraAte30(pSerAte30_A * 1.20, pSerAte30_B * 1.20)
+
+nomes = [
+    "P(Sinistro)",
+    "P(B | Sinistro)",
+    "P(Até 30 anos | Sinistro)",
+    "P(B | Sinistro e até 30 anos)"
+    ]
+
+print("Impacto na alteração da carteira:")
+
+for i in range(len(nomes)):
+    diferenca = (alterada[i] - original[i]) * 100
+    
+    print(f"\n{nomes[i]}")
+    print(f"  Original: {original[i]:.4f}")
+    print(f"  Alterada: {alterada[i]:.4f}")
+    print(f"  Diferença: {diferenca:+.2f}%")
+    
+            
+        
+    
+
+
