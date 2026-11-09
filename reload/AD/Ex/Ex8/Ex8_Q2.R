@@ -33,7 +33,7 @@ count.sem.defeito <- 0
 freq.mouses.defeituosos <- rep(0, 10)
 for (i in 1:nSamples)
 {
-  #sorteia quanto mouses de 10 são defeituosos
+  #sorteia quantos mouses de 10 são defeituosos
   count.com.defeito <- rbinom(1, n, p)
   
   if (count.com.defeito > 0)
