@@ -36,7 +36,7 @@ for (i in 1:nSamples)
   
   n.nao.destros.IT <- rhyper(1, 3, 7, 4)
   
-  if (n.nao.destros.BR + n.nao.destros.BR > 0)
+  if (n.nao.destros.BR + n.nao.destros.IT > 0)
   {
     count.pelo.menos.um.nao.destro <- count.pelo.menos.um.nao.destro+1
   }
@@ -44,4 +44,3 @@ for (i in 1:nSamples)
 
 prob.pelo.menos.um.nao.destro <- count.pelo.menos.um.nao.destro / nSamples
 print(prob.pelo.menos.um.nao.destro)
-
