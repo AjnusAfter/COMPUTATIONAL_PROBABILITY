@@ -1,7 +1,7 @@
 par(oma = c(0, 0, 3, 0),
     mfrow = c(1,2),
     bg = "black",
-    fg = "white",
+    fg = "gray50",
     col.axis = "white",
     col.lab = "white",
     col.main = "white"
