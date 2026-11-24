@@ -38,7 +38,7 @@ valory <- f(valorx)
 hist(X, breaks=100, col = 3, main="Amostra", xlab = "x")
 
 # f(x) e amostra
-hist(X, breaks=100, probability=TRUE, 
+hist(X, breaks=100, probability=TRUE, # ativa DENSIDADE, não frequência
      col = 3, 
      main = "Distribuição teórica + Histograma da amostra",
      xlab = "x",
